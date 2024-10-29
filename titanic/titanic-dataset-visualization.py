@@ -16,3 +16,16 @@ plt.xlabel('Passenger Class')
 plt.ylabel('Survival Rate')
 plt.xticks(rotation=0)
 plt.show()
+
+
+# Calculate survival rates by gender
+survival_rates_by_gender = train_data.groupby('Sex')['Survived'].mean()
+
+# Plot survival rates by gender
+plt.figure(figsize=(8, 6))
+survival_rates_by_gender.plot(kind='pie', color='skyblue')
+plt.title('Survival Rates by Gender')
+plt.xlabel('Gender')
+plt.ylabel('Survival Rate')
+plt.xticks(rotation=0)
+plt.show()
